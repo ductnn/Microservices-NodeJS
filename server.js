@@ -4,6 +4,9 @@ const port = process.env.PORT || 3000;
 const express = require('express');
 		
 // ROUTES
+
+// API
+const apiUserRoute = require('./api/routes/user.route');
 		
 const app = new express();
 		
@@ -24,6 +27,9 @@ app.get('/', async (req, res) => {
         name: 'Ductn'
     });
 });
+
+// use API
+app.use('/api/users', apiUserRoute);
 		
 app.listen(port, () => {
     console.log('Server running on port ' + port)
