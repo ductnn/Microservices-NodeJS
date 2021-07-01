@@ -19,7 +19,12 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 app.set('view engine', 'pug'); 
 app.set('views', './views');
 		
-app.get('/', async (req, res) => { res.render('index', { name: 'Ductn' }); } );
+app.get('/', async (req, res) => {
+    res.render('index', {
+        name: 'Ductn'
+    });
+});
 		
-app.listen(port, () => console.log('Server running on port ' + port));
-	
+app.listen(port, () => {
+    console.log('Server running on port ' + port)
+});
